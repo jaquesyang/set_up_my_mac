@@ -47,13 +47,13 @@ DEFAULT_USER="jaquesyang"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/Library/Android/sdk/tools
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -72,63 +72,69 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/Library/Android/sdk/tools
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# JAVA_HOME
-export JAVA_HOME=`/usr/libexec/java_home`
-
-# WILDFLY_HOME
-#export WILDFLY_HOME="/opt/wildfly"
-
-# JBOSS_HOME
-#export JBOSS_HOME=$WILDFLY_HOME
-
-# export OPENSHIFT_MYSQL_DB_USERNAME="root"
-# export OPENSHIFT_MYSQL_DB_PASSWORD="qweqwe"
-# export OPENSHIFT_MYSQL_DB_HOST="localhost"
-# export OPENSHIFT_MYSQL_DB_PORT="3306"
-
-#export DYLD_LIBRARY_PATH='/opt/oracle/instantclient'
-#export ORACLE_HOME=$DYLD_LIBRARY_PATH
-#export PATH=$ORACLE_HOME:$PATH:~/Shell
-
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshcf="subl ~/.zshrc"
+alias zshcf="code ~/.zshrc"
 alias zshrl="source ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias ohmyzsh="code ~/.oh-my-zsh"
 alias cls='clear'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-alias -s html=subl
-alias -s rb=subl
-alias -s py=python3
-alias -s js=subl
-alias -s c=subl
-alias -s cpp=subl
-alias -s h=subl
-alias -s java=subl
-alias -s txt=subl
+alias -s html=code
+alias -s rb=code
+#alias -s py=code
+alias -s js=code
+alias -s c=code
+alias -s cpp=code
+alias -s h=code
+alias -s java=code
+alias -s txt=code
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
-alias gst="git status"
-alias gad="git add"
-alias gci="git commit"
-alias gus="git reset HEAD"
-alias gps="git push"
-alias gpl="git pull"
-alias gdi="git diff"
+
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 
+alias fitmaxgo="ssh -l root fitmaxgo.aemse.com"
+alias yjq001_linux="ssh -l root -p 30022 yjq001.ddns.net"
+alias yjq001_mac="ssh -l jaquesyang -p 8022 yjq001.ddns.net"
+alias teapps="ssh -l nirons_root -p 1322 teapps.nirons.com"
 alias pfhkaemse="ssh jqyang@pfhk.aemse.com -p 16022"
-alias testijetso="ssh root@test.ijetso.com.hk"
-alias myserver="ssh my.server"
-alias myrouter="ssh admin88@my.router"
+alias aiatest="ssh -l root -p 20023 pfhk.aemse.com"
+
+
+alias nirons_tunnel="ssh -N -L34522:192.168.33.2:22 -L34580:192.168.33.2:80 -p 1322 sshtunnel@frontdoor.nirons.com"
+alias nirons_tunnel_atNGLzTb="nirons_tunnel"
+
+
+# maven
+alias mpk='mvn package'
+alias mcl='mvn clean'
+alias msr='mvn spring-boot:run'
+
+
+#
+
+alias teapps_5xAP_fEQ='ssh nirons_root@teapps.nirons.com -p 1322'
+
+alias clubcmstest='ssh -l root  218.189.187.146'
+alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
+
+alias scm='svn ci -m ""'
+alias sup='svn up'
+alias sst='svn st' 
+
+alias r80='ssh root@192.168.9.80'
+
 
 
