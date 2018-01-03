@@ -78,21 +78,21 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshcf="code ~/.zshrc"
+alias zshcf="subl ~/.zshrc"
 alias zshrl="source ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias ohmyzsh="subl ~/.oh-my-zsh"
 alias cls='clear'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-alias -s html=code
-alias -s rb=code
-#alias -s py=code
-alias -s js=code
-alias -s c=code
-alias -s cpp=code
-alias -s h=code
-alias -s java=code
-alias -s txt=code
+alias -s html=subl
+alias -s rb=subl
+#alias -s py=subl
+alias -s js=subl
+alias -s c=subl
+alias -s cpp=subl
+alias -s h=subl
+alias -s java=subl
+alias -s txt=subl
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
