@@ -20,9 +20,9 @@ chsh -s /bin/zsh
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-sudo easy_install pip
 
-pip install powerline-status
+#sudo easy_install pip
+#pip install powerline-status
 
 git clone https://github.com/powerline/fonts.git --depth=1
 

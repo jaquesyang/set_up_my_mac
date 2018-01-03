@@ -136,5 +136,14 @@ alias sst='svn st'
 
 alias r80='ssh root@192.168.9.80'
 
+alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias unsetproxy='unset ALL_PROXY'
+
+alias pc='proxychains4'
+
+alias myip='curl -i http://httpbin.org/ip'
+
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+
 
 
