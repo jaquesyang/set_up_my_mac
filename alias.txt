@@ -1,0 +1,8 @@
+alias tclg='less /opt/tomcat/logs/catalina.out'
+alias fishlg='less /opt/glassfish3/glassfish/domains/domain1/logs/server.log'
+alias fishrl='/opt/glassfish3/bin/asadmin restart-domain'
+alias fishsd='/opt/glassfish3/bin/asadmin stop-domain'
+alias fishst='/opt/glassfish3/bin/asadmin start-domain'
+alias fishla='/opt/glassfish/bin/asadmin list-applications'
+alias udfmg='/opt/glassfish/bin/asadmin undeploy fitmaxgo'
+alias dpfmg='/opt/glassfish/bin/asadmin deploy fitmaxgo.ear'
