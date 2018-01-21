@@ -1,0 +1,5 @@
+Host nironsGitlabTunnel
+	Hostname 127.0.0.1
+	Port 34522
+	User git
+	IdentityFile ~/.ssh/id_rsa
