@@ -145,5 +145,10 @@ alias myip='curl -i http://httpbin.org/ip'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
+export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 
+# django
+alias drunserver='python3 manage.py runserver 127.0.0.1:8000'
+alias dmakemig='python3 manage.py makemigrations' 
+alias dmigrate='python3 manage.py migrate'

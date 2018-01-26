@@ -6,12 +6,18 @@
 ##
 
 
-192.168.9.80 pma.app pma.v.m
-192.168.9.80 fmg.app fmg.v.m
-192.168.9.80 fitmax.app fitmax.v.m
-192.168.9.80 pos.app pos.v.m
-192.168.9.80 fish.app fish.v.m
-192.168.9.80 tomcat.app tomcat.v.m
+192.168.9.80 pma.app pma.v.m pma.vm
+192.168.9.80 fmg.app fmg.v.m fmg.vm
+192.168.9.80 fitmax.app fitmax.v.m fitmax.vm
+192.168.9.80 pos.app pos.v.m pos.vm
+192.168.9.80 fish.app fish.v.m fish.vm
+192.168.9.80 tomcat.app tomcat.v.m tomcat.vm
+
+192.168.9.8 my.mini
+192.168.9.6 my.imac
+192.168.9.9 my.mbp
+192.168.9.7 my.r61e
+192.168.9.5 my.pc
 
 127.0.0.1	localhost
 255.255.255.255	broadcasthost
