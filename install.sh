@@ -11,7 +11,7 @@ brew tap caskroom/cask
 brew install rsync fswatch wget 
 
 #
-brew cask install iterm2 qq google-chrome filezilla alfred sizeup mplayerx sublime-text the-unarchiver virtualbox
+brew cask install iterm2 baiduinput qq google-chrome filezilla alfred sizeup mplayerx sublime-text the-unarchiver virtualbox
 
 
 # oh-my-zsh
@@ -37,3 +37,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # install RVM
 curl -L https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+
+
+
+
+sudo /Applications/install.app/Contents/Resources/createinstallmedia --volume /Volumes/install --applicationpath /Applications/install.app --nointeraction
