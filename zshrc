@@ -129,17 +129,19 @@ alias teapps_5xAP_fEQ='ssh nirons_root@teapps.nirons.com -p 1322'
 
 alias clubcmstest='ssh -l root  218.189.187.146'
 alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
+alias clubcmsuat='ssh -l root  218.189.187.149'
 
 alias scm='svn ci -m ""'
 alias sup='svn up'
 alias sst='svn st' 
 
 alias r80='ssh root@192.168.9.80'
+alias r6='ssh jaquesyang@192.168.9.6'
 
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
-alias pc='proxychains4'
+#alias pc='proxychains4'
 
 alias myip='curl -i http://httpbin.org/ip'
 
@@ -149,6 +151,6 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 
 # django
-alias drunserver='python3 manage.py runserver 127.0.0.1:8000'
+alias drunserver='python3 manage.py runserver 0.0.0.0:8000'
 alias dmakemig='python3 manage.py makemigrations' 
 alias dmigrate='python3 manage.py migrate'
