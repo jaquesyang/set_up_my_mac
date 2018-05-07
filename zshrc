@@ -125,7 +125,8 @@ alias msr='mvn spring-boot:run'
 
 #
 
-alias teapps_5xAP_fEQ='ssh nirons_root@teapps.nirons.com -p 1322'
+alias teapps_nirons_root='ssh nirons_root@teapps.nirons.com -p 1322'
+alias hotel_nirons_root='ssh -l nirons_root -p 1322 hotel.nirons.com'
 
 alias clubcmstest='ssh -l root  218.189.187.146'
 alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
