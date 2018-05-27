@@ -115,6 +115,7 @@ alias aiatest="ssh -l root -p 20023 pfhk.aemse.com"
 
 alias nirons_tunnel="ssh -N -L34522:192.168.33.2:22 -L34580:192.168.33.2:80 -p 1322 sshtunnel@frontdoor.nirons.com"
 alias nirons_tunnel_atNGLzTb="nirons_tunnel"
+alias gitlab_tunnel="ssh -N -L34522:192.168.33.2:22 -L34580:192.168.33.2:80 -p 1322 nirons_dev@frontdoor.nirons.com"
 
 
 # maven
@@ -131,6 +132,7 @@ alias hotel_nirons_root='ssh -l nirons_root -p 1322 hotel.nirons.com'
 alias clubcmstest='ssh -l root  218.189.187.146'
 alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
 alias clubcmsuat='ssh -l root  218.189.187.149'
+alias clubcmstrain='ssh -l root -p 2922  pfhk.aemse.com'
 
 alias scm='svn ci -m ""'
 alias sup='svn up'
