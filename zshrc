@@ -128,6 +128,7 @@ alias msr='mvn spring-boot:run'
 
 alias teapps_nirons_root='ssh nirons_root@teapps.nirons.com -p 1322'
 alias hotel_nirons_root='ssh -l nirons_root -p 1322 hotel.nirons.com'
+alias corpchat_nirons_root='ssh -l nirons_root -p 1322 corpchat.nirons.com'
 
 alias clubcmstest='ssh -l root  218.189.187.146'
 alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
@@ -139,7 +140,9 @@ alias sup='svn up'
 alias sst='svn st' 
 
 alias r80='ssh root@192.168.9.80'
+alias r81='ssh root@192.168.9.81'
 alias r6='ssh jaquesyang@192.168.9.6'
+alias r8='ssh jaquesyang@192.168.9.8'
 
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
