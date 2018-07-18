@@ -140,6 +140,8 @@ alias sst='svn st'
 
 alias r80='ssh root@192.168.9.80'
 alias r6='ssh jaquesyang@192.168.9.6'
+alias r7='ssh jaquesyang@192.168.9.7'
+alias r8='ssh jaquesyang@192.168.9.8'
 
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
@@ -157,3 +159,29 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 alias drunserver='python3 manage.py runserver 0.0.0.0:8000'
 alias dmakemig='python3 manage.py makemigrations' 
 alias dmigrate='python3 manage.py migrate'
+
+sync_to_x(){
+    user="jaquesyang"
+    host="192.168.9.$1"
+
+    project_path=$(cd `dirname $0`; pwd)
+    #project_name=${project_path##*/}
+
+    echo $project_path
+    #echo $project_name
+
+    prefix=/Users/${user}/doc/
+
+    #echo $prefix
+
+    if [[ ${project_path} == ${prefix}* ]] 
+    then
+        rsync -avz --delete "${project_path}/" "${user}@${host}:${project_path}"
+    else
+        #echo "No"
+    fi
+}
+
+alias sync_to_6='sync_to_x 6'
+alias sync_to_7='sync_to_x 7'
+alias sync_to_8='sync_to_x 8'
