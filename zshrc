@@ -187,3 +187,12 @@ sync_to_x(){
 alias sync_to_6='sync_to_x 6'
 alias sync_to_7='sync_to_x 7'
 alias sync_to_8='sync_to_x 8'
+
+sync_takeawayapp_api_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Takeawayapp/api/ nirons_root@takeawayapp.nirons.com:/home/nirons_root/takeawayapp/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+edit_set_up_my_mac(){
+    cd ~/doc/edit_set_up_my_mac
+    code .
+}
