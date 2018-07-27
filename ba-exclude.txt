@@ -1,0 +1,8 @@
+.DS_Store
+.git
+.svn
+.idea
+.tmp
+.travis.yml
+bower_components
+node_modules

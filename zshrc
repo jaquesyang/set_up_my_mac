@@ -192,7 +192,11 @@ sync_takeawayapp_api_to_test(){
     rsync -avz --delete -e 'ssh -p 1322' ~/doc/Takeawayapp/api/ nirons_root@takeawayapp.nirons.com:/home/nirons_root/takeawayapp/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
 }
 
+sync_takeawayapp_cms_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Takeawayapp/cms/ nirons_root@takeawayapp.nirons.com:/home/nirons_root/takeawayapp/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
 edit_set_up_my_mac(){
-    cd ~/doc/edit_set_up_my_mac
+    cd ~/doc/set_up_my_mac
     code .
 }
