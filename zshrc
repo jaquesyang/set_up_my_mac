@@ -131,7 +131,7 @@ alias hotel_nirons_root='ssh -l nirons_root -p 1322 hotel.nirons.com'
 alias corpchat_nirons_root='ssh -l nirons_root -p 1322 corpchat.nirons.com'
 
 alias clubcmstest='ssh -l root  218.189.187.146'
-alias clubcmsdev='ssh -l root  cmsdev.aemse.com'
+alias clubcmsdev='ssh -l root  cmsdev.aemse.com -p 23022'
 alias clubcmsuat='ssh -l root  218.189.187.149'
 alias clubcmstrain='ssh -l root -p 2922  pfhk.aemse.com'
 
@@ -196,7 +196,19 @@ sync_takeawayapp_cms_to_test(){
     rsync -avz --delete -e 'ssh -p 1322' ~/doc/Takeawayapp/cms/ nirons_root@takeawayapp.nirons.com:/home/nirons_root/takeawayapp/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
 
+sync_hotel_api_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Hotel_App/hotel_app_api/ nirons_root@hotel.nirons.com:/home/nirons_root/hotel/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+sync_hotel_cms_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Hotel_App/hotel_app_cms/ nirons_root@hotel.nirons.com:/home/nirons_root/hotel/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
 edit_set_up_my_mac(){
     cd ~/doc/set_up_my_mac
     code .
+}
+
+sync_clubcms_to_dev(){
+    rsync -avz --delete -e 'ssh -p 23022' ~/doc/angular/fitmax-cms-frontend/ root@cmsdev.aemse.com:/root/cms-frontend-2 --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
