@@ -148,6 +148,8 @@ alias r8='ssh jaquesyang@192.168.9.8'
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
+alias sety1proxy='export ALL_PROXY=socks5://192.168.9.1:1081'
+
 #alias pc='proxychains4'
 
 alias myip='curl -i http://httpbin.org/ip'
@@ -212,3 +214,7 @@ edit_set_up_my_mac(){
 sync_clubcms_to_dev(){
     rsync -avz --delete -e 'ssh -p 23022' ~/doc/angular/fitmax-cms-frontend/ root@cmsdev.aemse.com:/root/cms-frontend-2 --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
+
+alias gucl='gulp clean'
+alias gubd='gulp build'
+alias gusv='gulp serve'
