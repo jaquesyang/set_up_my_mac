@@ -139,16 +139,21 @@ alias scm='svn ci -m ""'
 alias sup='svn up'
 alias sst='svn st' 
 
-alias r80='ssh root@192.168.9.80'
-alias r81='ssh root@192.168.9.81'
-alias r6='ssh jaquesyang@192.168.9.6'
-alias r7='ssh jaquesyang@192.168.9.7'
-alias r8='ssh jaquesyang@192.168.9.8'
+alias r80='ssh root@192.168.1.80'
+alias r81='ssh root@192.168.1.81'
+alias r2='ssh jaquesyang@192.168.1.2'
+alias r3='ssh jaquesyang@192.168.1.3'
+alias r4='ssh jaquesyang@192.168.1.4'
+alias r5='ssh jaquesyang@192.168.1.5'
+alias r6='ssh jaquesyang@192.168.1.6'
+alias r7='ssh jaquesyang@192.168.1.7'
+alias r8='ssh jaquesyang@192.168.1.8'
+alias r9='ssh jaquesyang@192.168.1.9'
 
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
-alias sety1proxy='export ALL_PROXY=socks5://192.168.9.1:1081'
+alias sety1proxy='export ALL_PROXY=socks5://192.168.1.4:1081'
 
 #alias pc='proxychains4'
 
@@ -166,7 +171,7 @@ alias dmigrate='python3 manage.py migrate'
 
 sync_to_x(){
     user="jaquesyang"
-    host="192.168.9.$1"
+    host="192.168.1.$1"
 
     project_path=$(cd `dirname $0`; pwd)
     #project_name=${project_path##*/}
@@ -206,6 +211,22 @@ sync_hotel_cms_to_test(){
     rsync -avz --delete -e 'ssh -p 1322' ~/doc/Hotel_App/hotel_app_cms/ nirons_root@hotel.nirons.com:/home/nirons_root/hotel/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
 
+sync_tennis_api_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Tennis/api/ nirons_root@teapps.nirons.com:/home/nirons_root/tennis/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+sync_tennis_admin_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Tennis/admin/ nirons_root@teapps.nirons.com:/home/nirons_root/tennis/admin --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
+sync_tennis_coach_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Tennis/coach/ nirons_root@teapps.nirons.com:/home/nirons_root/tennis/coach --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
+sync_tennis_frontend_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/Tennis/frontend/ nirons_root@teapps.nirons.com:/home/nirons_root/tennis/frontend --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
 edit_set_up_my_mac(){
     cd ~/doc/set_up_my_mac
     code .
@@ -218,3 +239,7 @@ sync_clubcms_to_dev(){
 alias gucl='gulp clean'
 alias gubd='gulp build'
 alias gusv='gulp serve'
+alias gusd='gulp serve:dist'
+alias gube='gulp build --env'
+
+alias rgs='ssh ubuntu@gsaws.fitmaxworld.com'
