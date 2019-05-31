@@ -139,29 +139,31 @@ alias scm='svn ci -m ""'
 alias sup='svn up'
 alias sst='svn st' 
 
-alias r80='ssh root@192.168.1.80'
-alias r81='ssh root@192.168.1.81'
-alias r2='ssh jaquesyang@192.168.1.2'
-alias r3='ssh jaquesyang@192.168.1.3'
-alias r4='ssh jaquesyang@192.168.1.4'
-alias r5='ssh jaquesyang@192.168.1.5'
-alias r6='ssh jaquesyang@192.168.1.6'
-alias r7='ssh jaquesyang@192.168.1.7'
-alias r8='ssh jaquesyang@192.168.1.8'
-alias r9='ssh jaquesyang@192.168.1.9'
+NET=1
+
+alias r80='ssh root@192.168.$NET.80'
+alias r81='ssh root@192.168.$NET.81'
+alias r2='ssh jaquesyang@192.168.$NET.2'
+alias r3='ssh jaquesyang@192.168.$NET.3'
+alias r4='ssh jaquesyang@192.168.$NET.4'
+alias r5='ssh jaquesyang@192.168.$NET.5'
+alias r6='ssh jaquesyang@192.168.$NET.6'
+alias r7='ssh jaquesyang@192.168.$NET.7'
+alias r8='ssh jaquesyang@192.168.$NET.8'
+alias r9='ssh jaquesyang@192.168.$NET.9'
 
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
-alias sety1proxy='export ALL_PROXY=socks5://192.168.1.4:1081'
+alias sety1proxy='export ALL_PROXY=socks5://192.168.$NET.4:1081'
 
-#alias pc='proxychains4'
+#alias pc4='proxychains4'
 
 alias myip='curl -i http://httpbin.org/ip'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+#export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 
 # django
@@ -171,7 +173,7 @@ alias dmigrate='python3 manage.py migrate'
 
 sync_to_x(){
     user="jaquesyang"
-    host="192.168.1.$1"
+    host="192.168.$NET.$1"
 
     project_path=$(cd `dirname $0`; pwd)
     #project_name=${project_path##*/}
@@ -243,3 +245,24 @@ alias gusd='gulp serve:dist'
 alias gube='gulp build --env'
 
 alias rgs='ssh ubuntu@gsaws.fitmaxworld.com'
+
+alias ctar='tar -czvf'
+alias xtar='tar -xzvf'
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# FLUTTER
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export FLUTTER_HOME=$HOME/flutter
+export PATH=$PATH:$FLUTTER_HOME/bin
