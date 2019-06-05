@@ -152,7 +152,9 @@ alias r7='ssh jaquesyang@192.168.$NET.7'
 alias r8='ssh jaquesyang@192.168.$NET.8'
 alias r9='ssh jaquesyang@192.168.$NET.9'
 
+alias start_teapps_proxy='ssh -D 8899 -C -f -q -N nirons_root@teapps.nirons.com -p 1322'
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias set8899proxy='export ALL_PROXY=socks5://127.0.0.1:8899'
 alias unsetproxy='unset ALL_PROXY'
 
 alias sety1proxy='export ALL_PROXY=socks5://192.168.$NET.4:1081'
