@@ -111,6 +111,7 @@ alias yjq001_mac="ssh -l jaquesyang -p 8022 yjq001.ddns.net"
 alias teapps="ssh -l nirons_root -p 1322 teapps.nirons.com"
 alias pfhkaemse="ssh jqyang@pfhk.aemse.com -p 16022"
 alias aiatest="ssh -l root -p 20023 pfhk.aemse.com"
+alias aiaprod="ssh -l root -p 11022 aia.acise.com"
 
 
 alias nirons_tunnel="ssh -N -L34522:192.168.33.2:22 -L34580:192.168.33.2:80 -p 1322 sshtunnel@frontdoor.nirons.com"
@@ -152,7 +153,8 @@ alias r7='ssh jaquesyang@192.168.$NET.7'
 alias r8='ssh jaquesyang@192.168.$NET.8'
 alias r9='ssh jaquesyang@192.168.$NET.9'
 
-alias start_teapps_proxy='ssh -D 8899 -C -f -q -N nirons_root@teapps.nirons.com -p 1322'
+alias start_teapps_proxy='ssh -D 8899 -C -q -N nirons_root@teapps.nirons.com -p 1322'
+
 alias setssproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias set8899proxy='export ALL_PROXY=socks5://127.0.0.1:8899'
 alias unsetproxy='unset ALL_PROXY'
