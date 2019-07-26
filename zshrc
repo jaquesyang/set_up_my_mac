@@ -112,6 +112,7 @@ alias teapps="ssh -l nirons_root -p 1322 teapps.nirons.com"
 alias pfhkaemse="ssh jqyang@pfhk.aemse.com -p 16022"
 alias aiatest="ssh -l root -p 20023 pfhk.aemse.com"
 alias aiaprod="ssh -l root -p 11022 aia.acise.com"
+alias asms="ssh -p 2622 root@123.1.162.180"
 
 
 alias nirons_tunnel="ssh -N -L34522:192.168.33.2:22 -L34580:192.168.33.2:80 -p 1322 sshtunnel@frontdoor.nirons.com"
@@ -233,6 +234,14 @@ sync_tennis_frontend_to_test(){
     rsync -avz --delete -e 'ssh -p 1322' ~/doc/Tennis/frontend/ nirons_root@teapps.nirons.com:/home/nirons_root/tennis/frontend --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
 
+sync_appshop_api_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/appshop/api/appshop-api/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+sync_appshop_cms_to_test(){
+    rsync -avz --delete -e 'ssh -p 1322' ~/doc/appshop/cms/appshop-cms/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
 edit_set_up_my_mac(){
     cd ~/doc/set_up_my_mac
     code .
@@ -270,3 +279,6 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export FLUTTER_HOME=$HOME/flutter
 export PATH=$PATH:$FLUTTER_HOME/bin
+
+
+alias sdhn='sudo shutdown -h now'
