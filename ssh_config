@@ -3,3 +3,23 @@ Host nironsGitlabTunnel
 	Port 34522
 	User git
 	IdentityFile ~/.ssh/id_rsa
+
+Host nironsgitlab
+	Hostname 127.0.0.1
+	Port 34522
+	User git
+	IdentityFile ~/.ssh/id_rsa
+
+#Host www.rent-chat.com
+#	ProxyCommand nc -X 5 -x 127.0.0.1:8899 %h %p 
+
+Host rentchat
+	HostName www.rent-chat.com
+	User root
+	IdentityFile ~/.ssh/id_rsa
+
+Host r6
+	HostName 192.168.1.6
+	User jaquesyang
+	IdentityFile ~/.ssh/id_rsa
+
