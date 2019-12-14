@@ -57,7 +57,7 @@ export PATH=$HOME/bin:$HOME/.pkg_uninstaller:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -162,7 +162,7 @@ alias unsetproxy='unset ALL_PROXY'
 
 alias sety1proxy='export ALL_PROXY=socks5://192.168.$NET.4:1081'
 
-#alias pc4='proxychains4'
+alias pc4='proxychains4'
 
 alias myip='curl -i http://httpbin.org/ip'
 
@@ -235,12 +235,23 @@ sync_tennis_frontend_to_test(){
 }
 
 sync_appshop_api_to_test(){
-    rsync -avz --delete -e 'ssh -p 1322' ~/doc/appshop/api/appshop-api/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+    rsync -avzL --delete -e 'ssh -p 1322' ~/doc/appshop/api/appshop-api/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
 }
 
 sync_appshop_cms_to_test(){
-    rsync -avz --delete -e 'ssh -p 1322' ~/doc/appshop/cms/appshop-cms/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+    rsync -avzL --delete -e 'ssh -p 1322' ~/doc/appshop/cms/appshop-cms/ nirons_root@hotel.nirons.com:/home/nirons_root/appshop/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
 }
+
+sync_asms_api_to_test(){
+    rsync -avzL --delete -e 'ssh -p 2622' ~/doc/asms/api/asms-api/ root@123.1.162.180:/root/asms/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+sync_asms_cms_to_test(){
+#   rsync -avzL --delete -e 'ssh -p 2622' ~/doc/asms/cms/asms-cms/ root@123.1.162.180:/root/asms/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+    rsync -avzL --delete -e 'ssh -p 2622' ~/doc/asms/cms/asms-cms/release/ root@123.1.162.180://usr/share/nginx/asms_cms
+}
+
+
 
 edit_set_up_my_mac(){
     cd ~/doc/set_up_my_mac
@@ -258,6 +269,8 @@ alias gusd='gulp serve:dist'
 alias gube='gulp build --env'
 
 alias rgs='ssh ubuntu@gsaws.fitmaxworld.com'
+alias gsuat='ssh aemse@gsuat.aemse.com'
+alias citiuat='ssh root@citiuat.aemse.com'
 
 alias ctar='tar -czvf'
 alias xtar='tar -xzvf'
@@ -270,7 +283,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvmcd 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
@@ -282,3 +295,43 @@ export PATH=$PATH:$FLUTTER_HOME/bin
 
 
 alias sdhn='sudo shutdown -h now'
+
+alias citi_prd='ssh -p 10122 root@fitmaxciti.dynamic-dns.net'
+
+alias gcamu='gcam "update"'
+
+
+alias fp='flutter packages'
+alias fpg='fp get'
+alias fpprbr='fp pub run build_runner'
+alias fpprbrb='fpprbr build'
+alias fpprbrw='fpprbr watch'
+alias fpprbrc='fpprbr clean'
+alias fpprbrbdco='fpprbrb --delete-conflicting-outputs'
+
+alias mo8doc='mount_afp afp://jaquesyang@192.168.1.8/OSX/Documents ~/8doc'
+
+
+
+alias rentchat="ssh root@www.rent-chat.com"
+
+sync_rentchat_api_to_test(){
+    rsync -avzL --delete -e 'ssh -p 22' ~/doc/rentchat/api/ root@www.rent-chat.com:/root/rentchat/api --exclude-from ~/doc/set_up_my_mac/mvn-exclude.txt
+}
+
+sync_rentchat_cms_to_test(){
+    rsync -avzL --delete -e 'ssh -p 22' ~/doc/rentchat/cms/release/ root@www.rent-chat.com:/home/rent-chat/www/cms --exclude-from ~/doc/set_up_my_mac/ba-exclude.txt
+}
+
+alias httpproxy="privoxy /usr/local/etc/privoxy/config"
+
+
+alias start_rentchat_proxy='ssh -D 8899 -C -q -N root@www.rent-chat.com'
+
+flutter_ios_archive(){
+    flutter clean
+    flutter build ios --release
+    xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release archive -archivePath build/Runner.xcarchive
+}
+
+alias start_cmsdev_proxy='ssh -D 8899 -C -q -N root@cmsdev.aemse.com -p 23022'
