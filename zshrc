@@ -335,3 +335,5 @@ flutter_ios_archive(){
 }
 
 alias start_cmsdev_proxy='ssh -D 8899 -C -q -N root@cmsdev.aemse.com -p 23022'
+
+alias honda='ssh root@123.1.162.181 -p 9922'
