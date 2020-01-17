@@ -23,3 +23,9 @@ Host r6
 	User jaquesyang
 	IdentityFile ~/.ssh/id_rsa
 
+Host frontdoor.nirons.com
+	Hostname frontdoor.nirons.com
+	Port 1322
+	User nirons_dev
+	IdentityFile ~/.ssh/mini_id_rsa
+
